@@ -37,7 +37,7 @@ const Main = () => {
 
   const fetchData = async (values) => {
 
-    let prompt = `Write me a clear, crisp and convincing pitch for applying for a ${values.role} position at a company. Intelligently mention my ${values.skills} to highlight my strengths. Limit words to 150. ${values.additionalInfo}`;
+    let prompt = `Write me a clear, crisp and convincing pitch for applying for a ${values.role} position at a company. Intelligently mention my skills like ${values.skills} to highlight my strengths. Limit words to 120. ${values.additionalInfo}`;
 
     const requestOptions = {
       method: 'POST',
