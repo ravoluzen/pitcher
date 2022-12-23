@@ -63,7 +63,7 @@ const PitchText = ({promptValues, role, text, save, className}) => {
                   {role ? (
                       <p className="text-lg font-semibold">for: <span className="text-primary underline">{role}</span></p>
                   ) : (
-                      <p className="text-lg font-semibold">for: <span className="text-primary underline">{promptValues.role}</span></p>)
+                      <p className="text-base md:text-lg font-semibold">for: <span className="text-primary underline">{promptValues.role}</span></p>)
                   }
                   <p>{editorState === "" ? text : editorState}</p>
                 </FlexCol>
