@@ -1,18 +1,16 @@
-import { useState, useContext, Children} from "react";
+import { useState } from "react";
 import {PromptContext} from "./PromptContext";
 
 export default function ContextProvider({children}) {
   const [promptValues, setPromptValues] = useState({
-    pitchType: "",
-    orgType: "",
     role: "",
     skills: "",
-    tone: "",
     additionalInfo: "",
 });
+  const [enableQuery, setEnableQuery] = useState(false)
 
   return (
-    <PromptContext.Provider value={{ promptValues, setPromptValues }}>
+    <PromptContext.Provider value={{ promptValues, setPromptValues, enableQuery, setEnableQuery }}>
         {children}
     </PromptContext.Provider>
   )

@@ -3,6 +3,7 @@ import ContextProvider from '../context/ContextProvider'
 import '../styles/globals.css'
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
+import Layout from '../components/Layout';
 
 function MyApp({ Component, pageProps }) {
   const [queryClient] = useState(() => new QueryClient());
@@ -10,9 +11,10 @@ function MyApp({ Component, pageProps }) {
     // Provide the client to your App
     <QueryClientProvider client={queryClient}>
       <ContextProvider>
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </ContextProvider>
-      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 }

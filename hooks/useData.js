@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { useQuery } from "react-query"
+
 export default function useData(promptValues){
 
-    const { pitchType, orgType, role, skills, tone, additionalInfo } = promptValues;
+    const { role, skills, additionalInfo } = promptValues;
 
-    let prompt = `Write me a convincing pitch for asking a ${pitchType} at a ${orgType} for a ${role} position. My skills are ${skills}. Tone: ${tone}. Word Limit: 150. ${additionalInfo}`
+    let prompt = `Write me a clear, crisp and convincing pitch for applying for a ${role} position at a company. Intelligently mention my ${skills} to highlight my strengths. Limit words to 100. ${additionalInfo}`
 
     const requestOptions = {
       method: 'POST',
@@ -14,7 +16,7 @@ export default function useData(promptValues){
       body: JSON.stringify({
         'prompt': prompt,
         'temperature': 0.7,
-        'max_tokens': 200,
+        'max_tokens': 150,
         'top_p': 1,
         'frequency_penalty': 0,
         'presence_penalty': 0,
@@ -23,9 +25,10 @@ export default function useData(promptValues){
 
     const fetchData = async () => {
       const data = await fetch('https://api.openai.com/v1/engines/text-davinci-003/completions', requestOptions)
-        .then(response => response.json());
+        .then(response => response.json())
+        .then((res) => console.log("useData", res));
       return data;
     }
 
-    return useQuery('data', fetchData, {enabled: false, refetchOnMount: false, staleTime:1000});
+    return useQuery('data', fetchData, {enabled: false, refetchOnMount: false, staleTime: 0});
 }

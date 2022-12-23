@@ -1,19 +1,17 @@
 import { useContext } from "react";
-import Input from "../components/Input";
 import PitchText from "../components/PitchText";
 import { PromptContext } from "../context/PromptContext";
 import { QueryClientProvider, QueryClient } from "react-query"
-import Nav from "../components/Nav";
+import Main from "../components/Main";
+import Container from "../components/wrapper/Container";
 
 export default function Home() {
   const queryClient = new QueryClient();
 
   return (
-      <div className="flex flex-col lg:flex-row h-full w-full bg-gradient-to-tl from-purple-200 to-purple-600">
-          <Nav />
-          <Input />
-          <PitchText />
-      </div>
+      <Container className="p-6 md:p-10 overflow-hidden flex flex-col lg:flex-row min-h-full w-screen ">
+          <Main />
+      </Container>
 
   )
 }

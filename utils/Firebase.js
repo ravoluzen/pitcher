@@ -8,12 +8,12 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAsg2KFXll3k4BmiDeqnfKm0CYRz5-oZsk",
-  authDomain: "ravoluzen-pitcher.firebaseapp.com",
-  projectId: "ravoluzen-pitcher",
-  storageBucket: "ravoluzen-pitcher.appspot.com",
-  messagingSenderId: "30434667818",
-  appId: "1:30434667818:web:70416d46e5ebca427a8253"
+  apiKey: String(process.env.NEXT_PUBLIC_FB_KEY),
+  authDomain: String(process.env.NEXT_PUBLIC_FB_AUTH),
+  projectId: String(process.env.NEXT_PUBLIC_FB_PROJECT),
+  storageBucket: String(process.env.NEXT_PUBLIC_FB_BUCKET),
+  messagingSenderId: String(process.env.NEXT_PUBLIC_FB_MSGID),
+  appId: process.env.NEXT_PUBLIC_FB_APP,
 };
 
 // Initialize Firebase

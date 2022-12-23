@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { useAuthState } from "react-firebase-hooks/auth";
-import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
 import { auth, db } from "../utils/Firebase";
 import { useRouter } from "next/router";
+import FlexRow from './wrapper/FlexRow';
 
 const Nav = () => {
   const googleProvider = new GoogleAuthProvider()
@@ -20,16 +21,23 @@ const Nav = () => {
   };
 
   return (
-    <div>
-        <div>
-            Pitcher
+    <FlexRow className="p-4 border-b-4 border-primary justify-around text-secondary underline decoration-primary text-xl font-bold">
+        <div className="cursor-pointer" onClick={() => router.push("/")}>
+            PitchMe
         </div>
         <div>
-            <div>{!user ? <button onClick={handleLogin}>Log in!</button> : <button onClick={() => router.push("saved")}>Saved Pitches</button>}
+            <div className="cursor-pointer underline decoration-primary">{!user ? 
+                (<div onClick={handleLogin}>Log in!</div>
+                ) : (
+                    <div>
+                        <div onClick={() => router.push("saved")}>Saved Pitches</div>
+                        {/*<button onClick={() => signOut(auth)}>Sign Out</button>*/}
+                    </div>
+                )}
 
             </div>
         </div>
-    </div>
+    </FlexRow>
   )
 }
 
