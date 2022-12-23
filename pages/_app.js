@@ -4,6 +4,7 @@ import '../styles/globals.css'
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import Layout from '../components/Layout';
+import { Analytics } from '@vercel/analytics/react';
 
 function MyApp({ Component, pageProps }) {
   const [queryClient] = useState(() => new QueryClient());
@@ -13,6 +14,7 @@ function MyApp({ Component, pageProps }) {
       <ContextProvider>
         <Layout>
           <Component {...pageProps} />
+          <Analytics />
         </Layout>
       </ContextProvider>
     </QueryClientProvider>
