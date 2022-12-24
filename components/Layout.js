@@ -8,7 +8,11 @@ export default function Layout({ children }) {
         <Nav />
         <main>{children}</main>
         <a className="cursor-pointer" href="https://twitter.com/ravoluzen" target="_blank">
-          <h3 className="my-8 text-secondary text-center text-xl font-bold"><span className="text-yellow-300">PitchMe</span> by <span className="underline">ravoluzen</span>🐲</h3>
+          <h3 className="my-8 text-secondary text-center text-xl font-bold">
+            <span className="text-yellow-300">PitchMe</span> by <span className="underline">ravoluzen</span>🐲
+              <br />
+              <span className="text-lg">(open to frontend/fullstack opportunities)</span>
+          </h3>
         </a>
     </FlexCol>
   )
