@@ -9,7 +9,7 @@ export default function Home() {
   return (
       <>
         <Head>
-          <title>PitchMe by Ravoluzen</title>
+          <title>PitchMe</title>
           <meta name='description' content='Generate referral pitches and cover lettrs using AI, edit and save them.' />
         </Head>
         <Container className="p-6 md:p-10 overflow-hidden flex flex-col lg:flex-row min-h-full w-screen ">
