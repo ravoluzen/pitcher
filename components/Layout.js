@@ -9,7 +9,7 @@ export default function Layout({ children }) {
         <main>{children}</main>
         <a className="cursor-pointer" href="https://twitter.com/ravoluzen" target="_blank">
           <h3 className="my-3 text-secondary text-center text-xl font-bold">
-            <span className="text-yellow-300">created</span> by <span className="underline decoration-purple-400">ravoluzen</span>🐲
+            <span className="text-yellow-300">created</span> by <span className="underline decoration-purple-700">ravoluzen</span>🐲
               <br />
               <span className="text-lg">(open to frontend/fullstack opportunities)</span>
           </h3>
